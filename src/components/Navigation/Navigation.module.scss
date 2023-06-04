@@ -1,0 +1,62 @@
+@use '@/styles/variables/colors';
+@use '@/styles/mixins/elements';
+
+.list {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  font-weight: 600;
+  color: colors.$dark-gray;
+  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+
+  &__item {
+    transition: 0.3s;
+
+    &_active {
+      color: colors.$primary;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+}
+
+.nav {
+  position: relative;
+
+  &_tablet {
+    @include elements.center-content;
+
+    .list {
+      flex-direction: column;
+      gap: 0;
+
+      &__item {
+        &:hover {
+          background-color: colors.$grey-transparent;
+        }
+      }
+
+      &__link {
+        padding: 15px 0;
+      }
+    }
+  }
+}
+
+.close {
+  &__button {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    @include elements.reset-button-style;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
