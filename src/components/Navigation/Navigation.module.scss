@@ -4,7 +4,6 @@
 .list {
   display: flex;
   list-style: none;
-  gap: 3rem;
   font-weight: 600;
   color: colors.$dark-gray;
   text-transform: capitalize;
@@ -22,6 +21,12 @@
 
   &__link {
     display: block;
+    padding: 0 1.5rem;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 
