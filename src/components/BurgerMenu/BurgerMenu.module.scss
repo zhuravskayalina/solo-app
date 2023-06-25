@@ -1,0 +1,58 @@
+@use '@/styles/variables/colors';
+@use '@/styles/mixins/elements';
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+    padding: 43px 0;
+  }
+}
+
+.burger {
+  position: absolute;
+  top: 111px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: colors.$light;
+  animation: showMenu 0.5s ease-in-out;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-left: 60px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.auth {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 60px;
+}
+
+.close {
+  @include elements.reset-button-style;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@keyframes showMenu {
+  from {
+    top: 0;
+  }
+  to {
+    top: 111px;
+  }
+}

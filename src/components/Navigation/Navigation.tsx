@@ -2,21 +2,9 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import styles from './Navigation.module.scss';
 import clsx from 'clsx';
+import { NavigationProps, NavItem } from '@/components/Navigation/types';
 
-import closeIcon from '@/assets/images/icons/close.svg';
-import Image from 'next/image';
-
-export interface NavItem {
-  title: string;
-  url: string;
-}
-
-interface NavigationProps {
-  isTablet: boolean;
-  closeBurgerMenu: () => void;
-}
-
-export default function Navigation({ isTablet, closeBurgerMenu }: NavigationProps) {
+export default function Navigation({ isTablet }: NavigationProps) {
   const navItems: NavItem[] = useMemo(() => {
     return [
       {
@@ -53,11 +41,6 @@ export default function Navigation({ isTablet, closeBurgerMenu }: NavigationProp
           </li>
         ))}
       </ul>
-      {isTablet && (
-        <button className={styles.close__button} onClick={closeBurgerMenu}>
-          <Image src={closeIcon} alt="close" />
-        </button>
-      )}
     </nav>
   );
 }

@@ -1,0 +1,28 @@
+@use '@/styles/mixins/elements';
+@use '@/styles/variables/colors';
+
+.button {
+  font-family: 'Inter', sans-serif;
+  @include elements.reset-button-style;
+  padding: 16px 24px;
+  color: colors.$grey;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 16px;
+  border: 2px solid colors.$grey;
+  background-color: transparent;
+  line-height: 140%;
+  width: fit-content;
+  transition: transform 0.3s;
+
+  &_colored {
+    background-color: colors.$primary;
+    color: colors.$white;
+    border: 2px solid colors.$primary;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}

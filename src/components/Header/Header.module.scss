@@ -3,70 +3,70 @@
 
 .header {
   @include elements.center-content;
-  margin-top: 50px;
-  padding: 10px 0;
+  padding: 49px 0 20px 0;
 
   &_tablet {
     margin-top: 0;
+  }
+
+  &__auth {
+    margin-left: auto;
+  }
+
+  &__nav {
+    margin-left: 33px;
+  }
+
+  &_menu {
+    background-color: colors.$light;
+  }
+
+  @media screen and (max-width: 1300px) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 43px 0;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-top: 48px;
+  }
+}
+
+.logo {
+  @media screen and (max-width: 1300px) {
+    width: 138px;
+    height: 48px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 115px;
+    height: 40px;
   }
 }
 
 .container {
   @include elements.center-content;
-  width: 80%;
-  justify-content: space-between;
+  width: 78%;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 1300px) {
+    width: 88%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 83%;
+  }
 }
 
 .burger {
-  background-color: colors.$white;
-
-  &__background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: colors.$grey-transparent;
-    backdrop-filter: blur(5px);
-  }
-
   &__button {
     @include elements.reset-button-style;
     transition: 0.3s;
+    margin-left: auto;
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.07);
-    }
-  }
-}
-
-.auth {
-  display: flex;
-  gap: 3rem;
-  @include elements.center-content;
-
-  &__button {
-    font-weight: 600;
-    color: colors.$dark-gray;
-    text-transform: capitalize;
-    border-bottom: 2px solid transparent;
-    transition: 0.3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &_colored {
-      background-color: colors.$primary;
-      color: colors.$white;
-      padding: 16px 24px;
-      border-radius: 16px;
-
-      &:hover {
-        border-bottom: none;
-        transform: scale(1.1);
-      }
+      color: colors.$primary;
     }
   }
 }

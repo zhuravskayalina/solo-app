@@ -21,11 +21,16 @@
 
   &__link {
     display: block;
-    padding: 0 1.5rem;
+    padding: 0 23px;
     transition: 0.3s;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+
 
     &:hover {
-      transform: scale(1.1);
+      color: colors.$primary;
     }
   }
 }
@@ -39,11 +44,13 @@
     .list {
       flex-direction: column;
       gap: 0;
+      align-items: flex-start;
+      justify-content: center;
 
       &__item {
-        &:hover {
-          background-color: colors.$grey-transparent;
-        }
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
       }
 
       &__link {
