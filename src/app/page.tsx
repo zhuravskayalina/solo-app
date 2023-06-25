@@ -8,6 +8,8 @@ import travelersIcon from '@/assets/images/partners/travelers.svg';
 import velocityIcon from '@/assets/images/partners/velocity.svg';
 import wavesIcon from '@/assets/images/partners/waves.svg';
 import trialImage from '@/assets/images/main.png';
+import phoneImage from '@/assets/images/phone.png';
+import LandingStatistics from '@/components/LandingStatistics/LandingStatistics';
 
 export default function Home() {
   const partners = [
@@ -43,10 +45,10 @@ export default function Home() {
             Organize your tasks, lists and reminders in one app.
           </p>
           <div className={styles.trial__buttons}>
-            <BaseButton isColored link="#">
+            <BaseButton isColored link="#" color="gray">
               Try it free
             </BaseButton>
-            <BaseButton isColored={false} link="#">
+            <BaseButton isColored={false} link="#" color="gray">
               <Image src={playIcon} alt="play" />
               <span> Watch how it works</span>
             </BaseButton>
@@ -65,6 +67,23 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </section>
+      <section className={styles.demo}>
+        <div className={styles.demo__schedule}>
+          <div className={styles.demo__imgBox}>
+            <Image src={phoneImage} alt="phone and ladders" className={styles.demo__image} />
+          </div>
+          <div className={styles.demo__info}>
+            <h3 className={styles.demo__heading}>Keeping it all together</h3>
+            <p className={styles.demo__title}>
+              Just invite your team, Solo does all the heavy-lifting.
+            </p>
+            <BaseButton isColored={false} link="#" color="white">
+              Schedule a demo
+            </BaseButton>
+          </div>
+        </div>
+        <LandingStatistics />
       </section>
     </main>
   );

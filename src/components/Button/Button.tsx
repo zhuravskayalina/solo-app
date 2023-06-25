@@ -7,11 +7,17 @@ interface BaseButtonProps {
   isColored: boolean;
   link: string;
   children: ReactNode;
+  color: 'white' | 'gray';
 }
 
-export default function BaseButton({ isColored, link, children }: BaseButtonProps) {
+export default function BaseButton({ isColored, link, children, color }: BaseButtonProps) {
+  const colorTheme = color === 'white' ? styles.button_white : styles.button_gray;
+
   return (
-    <Link href={link} className={clsx(styles.button, isColored && styles.button_colored)}>
+    <Link
+      href={link}
+      className={clsx(styles.button, isColored && styles.button_colored, colorTheme)}
+    >
       {children}
     </Link>
   );

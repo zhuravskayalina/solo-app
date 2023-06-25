@@ -1,0 +1,65 @@
+@use '@/styles/variables/colors';
+@use '@/styles/mixins/elements';
+
+.statistics {
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(135deg, #fea989 0%, #99b4db 100%);
+  height: 200px;
+  width: 78%;
+  margin-top: -3px;
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    color: colors.$grey;
+  }
+
+  &__item {
+    border-right: 1px solid white;
+    @include elements.center-content;
+    flex-direction: column;
+    gap: 20px;
+    width: 342px;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+  }
+
+  &__number {
+    color: inherit;
+    font-size: 72px;
+    font-family: Cabin, sans-serif;
+    font-weight: 600;
+    line-height: 80px;
+  }
+
+  &__sign {
+    color: inherit;
+    font-size: 32px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    line-height: 40px;
+    align-self: flex-end;
+
+    &_top {
+      align-self: flex-start;
+    }
+  }
+
+  &__title {
+    display: flex;
+    padding: 8px 17px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    background: colors.$white;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.15);
+  }
+}

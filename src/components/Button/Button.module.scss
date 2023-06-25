@@ -21,6 +21,16 @@
     border: 2px solid colors.$primary;
   }
 
+  &_white {
+    border-color: colors.$white;
+    color: colors.$white;
+  }
+
+  &_gray {
+    border-color: colors.$grey;
+    color: colors.$grey;
+  }
+
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
