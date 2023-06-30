@@ -2,38 +2,12 @@ import styles from './page.module.scss';
 import Image from 'next/image';
 import playIcon from '@/assets/images/icons/play.svg';
 import BaseButton from '@/components/Button/Button';
-import goldlinesIcon from '@/assets/images/partners/goldlines.svg';
-import rotashowIcon from '@/assets/images/partners/rotashow.svg';
-import travelersIcon from '@/assets/images/partners/travelers.svg';
-import velocityIcon from '@/assets/images/partners/velocity.svg';
-import wavesIcon from '@/assets/images/partners/waves.svg';
 import trialImage from '@/assets/images/main.png';
 import Demo from '@/components/DemoBlock/Demo';
+import { partnersList } from '@/utils/partnersList';
+import { setupSteps } from '@/utils/setupSteps';
 
 export default function Home() {
-  const partners = [
-    {
-      img: goldlinesIcon,
-      alt: 'goldlines',
-    },
-    {
-      img: rotashowIcon,
-      alt: 'rotashow',
-    },
-    {
-      img: travelersIcon,
-      alt: 'travelers',
-    },
-    {
-      img: velocityIcon,
-      alt: 'velocity',
-    },
-    {
-      img: wavesIcon,
-      alt: 'waves',
-    },
-  ];
-
   return (
     <main className={styles.main}>
       <section className={styles.trial}>
@@ -60,7 +34,7 @@ export default function Home() {
       <section className={styles.partners}>
         <p className={styles.partners__title}>Thousands of teams worldwide are using Solo</p>
         <ul className={styles.partners__list}>
-          {partners.map((partner) => (
+          {partnersList.map((partner) => (
             <li key={partner.alt}>
               <Image src={partner.img} alt={partner.alt} />
             </li>
@@ -68,6 +42,19 @@ export default function Home() {
         </ul>
       </section>
       <Demo />
+      <section className={styles.setup}>
+        <h4 className={styles.setup__title}>Instant setup</h4>
+        <h2 className={styles.setup__heading}>Fast, simple & effortless.</h2>
+        <ul className={styles.setupList}>
+          {setupSteps.map((item) => (
+            <li key={item.step} className={styles.setupList__item}>
+              <Image src={item.icon} alt={item.title} />
+              <p className={styles.setupList__step}>Step {item.step}</p>
+              <p className={styles.setupList__title}>{item.title}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }

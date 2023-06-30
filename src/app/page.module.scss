@@ -139,3 +139,71 @@
   }
 }
 
+.setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 140px;
+
+  &__title {
+    font-size: 12px;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: colors.$secondary;
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: 48px;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px;
+    color: colors.$grey;
+    margin-top: 16px;
+  }
+}
+
+.setupList {
+  display: flex;
+  margin-top: 50px;
+
+  &__item {
+    border-right: 4px solid colors.$transparent-secondary;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__step {
+    border-radius: 90px;
+    padding: 2px 10px;
+    background-color: colors.$secondary;
+    width: fit-content;
+    font-size: 12px;
+    font-family: Inter, sans-serif;
+    color: colors.$white;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 24px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: colors.$grey;
+  }
+}
