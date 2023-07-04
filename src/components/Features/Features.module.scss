@@ -9,12 +9,20 @@
   &__title {
     @include elements.landing-title;
     color: colors.$secondary;
+
+    @media screen and (max-width: 700px) {
+      font-size: 12px;
+    }
   }
 
   &__heading {
     @include elements.landing-heading;
     color: colors.$grey;
     margin-top: 16px;
+
+    @media screen and (max-width: 700px) {
+      font-size: 40px;
+    }
   }
 
   &__list {
