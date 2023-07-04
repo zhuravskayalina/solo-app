@@ -19,3 +19,22 @@
   -moz-osx-font-smoothing: inherit;
   -webkit-appearance: none;
 }
+
+@mixin landing-heading {
+  text-align: center;
+  font-size: 48px;
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 56px;
+}
+
+@mixin landing-title {
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}

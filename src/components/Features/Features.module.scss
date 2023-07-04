@@ -1,0 +1,35 @@
+@use '@/styles/variables/colors';
+@use '@/styles/mixins/elements';
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    @include elements.landing-title;
+    color: colors.$secondary;
+  }
+
+  &__heading {
+    @include elements.landing-heading;
+    color: colors.$grey;
+    margin-top: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    padding: 0 50px;
+    gap: 100px;
+  }
+}
+
+.br {
+  display: none;
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+}

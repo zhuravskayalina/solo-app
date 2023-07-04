@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import styles from './Navigation.module.scss';
 import clsx from 'clsx';
-import { NavigationProps, NavItem } from '@/components/Navigation/types';
+import { NavItem, NavigationProps } from '@/components/Navigation/types';
 
 export default function Navigation({ isTablet }: NavigationProps) {
   const navItems: NavItem[] = useMemo(() => {

@@ -6,6 +6,8 @@ import trialImage from '@/assets/images/main.png';
 import Demo from '@/components/DemoBlock/Demo';
 import { partnersList } from '@/utils/partnersList';
 import { setupSteps } from '@/utils/setupSteps';
+import boxImage from '@/assets/images/box.png';
+import Features from '@/components/Features/Features';
 
 export default function Home() {
   return (
@@ -55,6 +57,8 @@ export default function Home() {
           ))}
         </ul>
       </section>
+      <Image src={boxImage} alt="box" className={styles.boxImage} />
+      <Features />
     </main>
   );
 }
