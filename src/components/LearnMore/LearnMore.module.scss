@@ -1,0 +1,71 @@
+@use '@/styles/mixins/elements';
+@use '@/styles/variables/colors';
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'info img';
+  padding: 80px 0 80px 80px;
+  border-radius: 24px;
+  background: colors.$color-light-background;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 70px auto;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'img'
+      'info';
+    padding: 32px;
+  }
+}
+
+.info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  * {
+    text-transform: capitalize;
+  }
+
+  &__title {
+    @include elements.landing-title;
+  }
+
+  &__heading {
+    @include elements.landing-heading;
+    margin-top: 16px;
+    text-align: start;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 40px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 32px;
+    }
+  }
+
+  &__description {
+    color: colors.$grey;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 24px;
+  }
+
+  &__button {
+    margin-top: 24px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  grid-area: img;
+}

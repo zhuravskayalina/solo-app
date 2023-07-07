@@ -1,13 +1,14 @@
 import styles from './page.module.scss';
 import Image from 'next/image';
-import playIcon from '@/assets/images/icons/play.svg';
-import BaseButton from '@/components/Button/Button';
-import trialImage from '@/assets/images/main.png';
-import Demo from '@/components/DemoBlock/Demo';
 import { partnersList } from '@/utils/partnersList';
 import { setupSteps } from '@/utils/setupSteps';
+import playIcon from '@/assets/images/icons/play.svg';
+import trialImage from '@/assets/images/main.png';
 import boxImage from '@/assets/images/box.png';
 import Features from '@/components/Features/Features';
+import BaseButton from '@/components/Button/Button';
+import Demo from '@/components/DemoBlock/Demo';
+import LearnMore from '@/components/LearnMore/LearnMore';
 
 export default function Home() {
   return (
@@ -59,6 +60,7 @@ export default function Home() {
       </section>
       <Image src={boxImage} alt="box" className={styles.boxImage} />
       <Features />
+      <LearnMore />
     </main>
   );
 }
