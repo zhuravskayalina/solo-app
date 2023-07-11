@@ -3,7 +3,7 @@
 
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   grid-template-areas: 'info img';
   padding: 80px 0 80px 80px;
   border-radius: 24px;
