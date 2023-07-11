@@ -10,6 +10,7 @@ import BaseButton from '@/components/Button/Button';
 import Demo from '@/components/DemoBlock/Demo';
 import LearnMore from '@/components/LearnMore/LearnMore';
 import AppPros from '@/components/AppPros/AppPros';
+import Integrations from '@/components/Integrations/Integrations';
 
 export default function Home() {
   return (
@@ -63,6 +64,7 @@ export default function Home() {
       <Features />
       <LearnMore />
       <AppPros />
+      <Integrations />
     </main>
   );
 }
