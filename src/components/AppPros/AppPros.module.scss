@@ -1,0 +1,44 @@
+.section {
+  width: 80%;
+  margin-top: 136px;
+
+  @media screen and (max-width: 560px) {
+    margin-top: 80px;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 50px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media screen and (max-width: 560px) {
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__line {
+  }
+
+  &__description {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
