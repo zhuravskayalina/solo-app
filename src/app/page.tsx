@@ -6,7 +6,6 @@ import { setupSteps } from '@/utils/setupSteps';
 
 import playIcon from '@/assets/images/icons/play.svg';
 import trialImage from '@/assets/images/main.png';
-import boxImage from '@/assets/images/box.png';
 import phoneImg from '@/assets/images/phone.png';
 import cloudBlocks from '@/assets/images/blocks-with-cloud.png';
 
@@ -21,36 +20,43 @@ import FeatureBlock from '@/components/FeatureBlock/FeatureBlock';
 export default function Home() {
   return (
     <main className={styles.main}>
-      <section className={styles.trial}>
-        <div className={styles.trial__info}>
-          <p className={styles.trial__paragraph}>RISK-FREE 30 DAY TRIAL</p>
-          <h2 className={styles.trial__heading}>The best way to organize your work.</h2>
-          <p className={styles.trial__description}>
-            Organize your tasks, lists and reminders in one app.
-          </p>
-          <div className={styles.trial__buttons}>
-            <BaseButton isColored link="#" color="white">
-              Try it free
-            </BaseButton>
-            <BaseButton isColored={false} link="#" color="gray">
-              <Image src={playIcon} alt="play" />
-              <span> Watch how it works</span>
-            </BaseButton>
+      <section>
+        <section className={styles.trial}>
+          <div className={styles.trial__info}>
+            <p className={styles.trial__paragraph}>RISK-FREE 30 DAY TRIAL</p>
+            <h2 className={styles.trial__heading}>The best way to organize your work.</h2>
+            <p className={styles.trial__description}>
+              Organize your tasks, lists and reminders in one app.
+            </p>
+            <div className={styles.trial__buttons}>
+              <BaseButton isColored link="#" color="white">
+                Try it free
+              </BaseButton>
+              <BaseButton isColored={false} link="#" color="gray">
+                <Image src={playIcon} alt="play" />
+                <span> Watch how it works</span>
+              </BaseButton>
+            </div>
           </div>
-        </div>
-        <div className={styles.trial__image}>
-          <Image src={trialImage} alt="trial" priority={true} className={styles.trial__image_img} />
-        </div>
-      </section>
-      <section className={styles.partners}>
-        <p className={styles.partners__title}>Thousands of teams worldwide are using Solo</p>
-        <ul className={styles.partners__list}>
-          {partnersList.map((partner) => (
-            <li key={partner.alt}>
-              <Image src={partner.img} alt={partner.alt} />
-            </li>
-          ))}
-        </ul>
+          <div className={styles.trial__image}>
+            <Image
+              src={trialImage}
+              alt="trial"
+              priority={true}
+              className={styles.trial__image_img}
+            />
+          </div>
+        </section>
+        <section className={styles.partners}>
+          <p className={styles.partners__title}>Thousands of teams worldwide are using Solo</p>
+          <ul className={styles.partners__list}>
+            {partnersList.map((partner) => (
+              <li key={partner.alt}>
+                <Image src={partner.img} alt={partner.alt} />
+              </li>
+            ))}
+          </ul>
+        </section>
       </section>
       <Demo />
       <section className={styles.setup}>
@@ -66,7 +72,6 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <Image src={boxImage} alt="box" className={styles.boxImage} />
       <Features />
       <LearnMore />
       <AppPros />

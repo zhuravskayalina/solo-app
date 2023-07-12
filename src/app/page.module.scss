@@ -5,6 +5,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 136px;
+
+  @media screen and (max-width: 1300px) {
+    gap: 112px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    gap: 48px;
+  }
 }
 
 .trial {
@@ -214,10 +223,4 @@
       }
     }
   }
-}
-
-.boxImage {
-  width: 50%;
-  height: auto;
-  margin: 80px auto;
 }
