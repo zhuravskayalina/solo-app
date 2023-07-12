@@ -1,24 +1,25 @@
 @use '@/styles/mixins/elements';
 @use '@/styles/variables/colors';
 
-.main {
+.section {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-areas: 'info img';
-  padding: 80px 0 80px 80px;
-  border-radius: 24px;
-  background: colors.$color-light-background;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas: 'img info';
   width: 80%;
-  margin: 70px auto;
+  margin: 0 auto;
 
-  @media screen and (max-width: 1200px) {
+  &_reverted {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: 'info img';
+  }
+
+  @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-areas:
       'img'
       'info';
-    padding: 32px;
   }
+  gap: 30px;
 }
 
 .info {
@@ -26,10 +27,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  * {
-    text-transform: capitalize;
-  }
 
   &__title {
     @include elements.landing-title;
@@ -39,14 +36,6 @@
     @include elements.landing-heading;
     margin-top: 16px;
     text-align: start;
-
-    @media screen and (max-width: 1200px) {
-      font-size: 40px;
-    }
-
-    @media screen and (max-width: 1024px) {
-      font-size: 32px;
-    }
   }
 
   &__description {
@@ -55,12 +44,15 @@
   }
 
   &__button {
-    margin-top: 24px;
+    margin-top: 32px;
   }
 }
 
 .image {
-  width: 100%;
-  height: auto;
   grid-area: img;
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
 }

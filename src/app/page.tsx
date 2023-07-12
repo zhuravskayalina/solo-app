@@ -1,16 +1,22 @@
-import styles from './page.module.scss';
 import Image from 'next/image';
+import styles from './page.module.scss';
+
 import { partnersList } from '@/utils/partnersList';
 import { setupSteps } from '@/utils/setupSteps';
+
 import playIcon from '@/assets/images/icons/play.svg';
 import trialImage from '@/assets/images/main.png';
 import boxImage from '@/assets/images/box.png';
+import phoneImg from '@/assets/images/phone.png';
+import cloudBlocks from '@/assets/images/blocks-with-cloud.png';
+
 import Features from '@/components/Features/Features';
 import BaseButton from '@/components/Button/Button';
 import Demo from '@/components/DemoBlock/Demo';
 import LearnMore from '@/components/LearnMore/LearnMore';
 import AppPros from '@/components/AppPros/AppPros';
 import Integrations from '@/components/Integrations/Integrations';
+import FeatureBlock from '@/components/FeatureBlock/FeatureBlock';
 
 export default function Home() {
   return (
@@ -65,6 +71,20 @@ export default function Home() {
       <LearnMore />
       <AppPros />
       <Integrations />
+      <FeatureBlock
+        imageSide="left"
+        img={phoneImg}
+        title={{ __html: 'Your busy life <br> deserves this' }}
+        description="We are a growing family of 382,081 designers and makers from around the world"
+        buttonText="Launch Solo Desktop App"
+      />
+      <FeatureBlock
+        imageSide="right"
+        img={cloudBlocks}
+        title={{ __html: 'Never forget <br> anything, <br> ever again' }}
+        description="We are a growing family of 382,081 designers and makers from around the world"
+        buttonText="Find out more"
+      />
     </main>
   );
 }
