@@ -2,7 +2,6 @@
 @use '@/styles/variables/colors';
 
 .button {
-  font-family: 'Inter', sans-serif;
   @include elements.reset-button-style;
   padding: 16px 24px;
   color: colors.$grey;
@@ -13,7 +12,10 @@
   background-color: transparent;
   line-height: 140%;
   width: fit-content;
-  transition: transform 0.3s;
+  transition: 0.3s;
+  font-style: normal;
+  opacity: 0.75;
+  font-family: 'Inter', sans-serif;
 
   &_colored {
     background-color: colors.$primary;
@@ -32,7 +34,6 @@
   }
 
   &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+    opacity: 1;
   }
 }
