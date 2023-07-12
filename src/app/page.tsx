@@ -8,6 +8,7 @@ import playIcon from '@/assets/images/icons/play.svg';
 import trialImage from '@/assets/images/main.png';
 import phoneImg from '@/assets/images/phone.png';
 import cloudBlocks from '@/assets/images/blocks-with-cloud.png';
+import bigCircleImg from '@/assets/images/big-circle.png';
 
 import Features from '@/components/Features/Features';
 import BaseButton from '@/components/Button/Button';
@@ -16,6 +17,8 @@ import LearnMore from '@/components/LearnMore/LearnMore';
 import AppPros from '@/components/AppPros/AppPros';
 import Integrations from '@/components/Integrations/Integrations';
 import FeatureBlock from '@/components/FeatureBlock/FeatureBlock';
+import FeatureDescription from '@/components/FeatureDescription/FeatureDescription';
+import { productivityLandingItems } from '@/utils/productivityLandingItems';
 
 export default function Home() {
   return (
@@ -80,16 +83,47 @@ export default function Home() {
         imageSide="left"
         img={phoneImg}
         title={{ __html: 'Your busy life <br> deserves this' }}
-        description="We are a growing family of 382,081 designers and makers from around the world"
+        description={{
+          __html:
+            'We are a growing family of 382,081 designers <br> and makers from around the world',
+        }}
         buttonText="Launch Solo Desktop App"
       />
       <FeatureBlock
         imageSide="right"
         img={cloudBlocks}
         title={{ __html: 'Never forget <br> anything, <br> ever again' }}
-        description="We are a growing family of 382,081 designers and makers from around the world"
+        description={{
+          __html:
+            'We are a growing family of 382,081 designers <br> and makers from around the world',
+        }}
         buttonText="Find out more"
       />
+      <section className={styles.productivity}>
+        <Image src={bigCircleImg} alt="big cirle" className={styles.productivity__image} />
+        <div className={styles.productivity__featureDescription}>
+          <FeatureDescription
+            title={{ __html: 'Increase <br> Productivity' }}
+            description={{
+              __html:
+                'We are a growing family of 382,081 designers <br> and makers from around the world',
+            }}
+            buttonText="Sign up now"
+            heading="Deep Focus & Multitasking"
+          />
+        </div>
+        <ul className={styles.productivityList}>
+          {productivityLandingItems.map((item) => (
+            <li className={styles.productivityList__item} key={item.id}>
+              <Image src={item.icon} alt="icon" className={styles.productivityList__icon} />
+              <p className={styles.productivityList__title}>{item.title}</p>
+              <p className={styles.productivityList__description}>
+                We are a growing family of 382,081 designers and makers from around the world
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }

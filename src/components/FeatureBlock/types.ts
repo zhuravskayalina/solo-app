@@ -4,6 +4,6 @@ export interface FeatureBlockProps {
   imageSide: 'right' | 'left';
   img: StaticImageData;
   title: { __html: string | TrustedHTML };
-  description: string;
+  description: { __html: string | TrustedHTML };
   buttonText: string;
 }

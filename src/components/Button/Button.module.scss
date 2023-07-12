@@ -17,10 +17,19 @@
   opacity: 0.75;
   font-family: 'Inter', sans-serif;
 
+  &:hover {
+    opacity: 1;
+  }
+
   &_colored {
     background-color: colors.$primary;
     color: colors.$white;
     border: 2px solid colors.$primary;
+    opacity: 1;
+
+    &:hover {
+      color: colors.$black;
+    }
   }
 
   &_white {
@@ -31,9 +40,5 @@
   &_gray {
     border-color: colors.$grey;
     color: colors.$grey;
-  }
-
-  &:hover {
-    opacity: 1;
   }
 }
