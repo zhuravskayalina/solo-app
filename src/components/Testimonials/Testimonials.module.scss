@@ -1,0 +1,70 @@
+@use '@/styles/variables/colors';
+@use '@/styles/mixins/elements';
+
+.section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+  overflow: hidden;
+
+  &__heading {
+    color: colors.$grey;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 340px;
+    gap: 64px;
+    transition: 1s;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.scroller {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+
+  &__back {
+  }
+
+  &__forward {
+    &__img {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.button {
+  @include elements.reset-button-style;
+
+  &:hover {
+    cursor: pointer;
+
+    svg path {
+      stroke: colors.$black;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use '@/styles/variables/colors';
+
+.testimonial {
+  color: colors.$grey;
+  font-family: Poppins, sans-serif;
+  line-height: 130%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__text {
+    color: inherit;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: inherit;
+  }
+
+  &__name {
+    color: inherit;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: inherit;
+    margin-top: 32px;
+  }
+
+  &__job {
+    color: colors.$grey-transparent;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+  }
+}
