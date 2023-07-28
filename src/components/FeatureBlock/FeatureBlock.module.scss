@@ -16,36 +16,10 @@
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-areas:
-      'img'
-      'info';
+      'info'
+      'img';
   }
   gap: 30px;
-}
-
-.info {
-  grid-area: info;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  &__title {
-    @include elements.landing-title;
-  }
-
-  &__heading {
-    @include elements.landing-heading;
-    margin-top: 16px;
-    text-align: start;
-  }
-
-  &__description {
-    @include elements.landing-feature-description;
-    margin-top: 24px;
-  }
-
-  &__button {
-    margin-top: 32px;
-  }
 }
 
 .image {

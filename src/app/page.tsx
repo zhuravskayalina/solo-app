@@ -9,6 +9,7 @@ import trialImage from '@/assets/images/main.png';
 import phoneImg from '@/assets/images/phone.png';
 import cloudBlocks from '@/assets/images/blocks-with-cloud.png';
 import bigCircleImg from '@/assets/images/big-circle.png';
+import blocksImg from '@/assets/images/blocks.png';
 
 import Features from '@/components/Features/Features';
 import BaseButton from '@/components/Button/Button';
@@ -19,6 +20,7 @@ import Integrations from '@/components/Integrations/Integrations';
 import FeatureBlock from '@/components/FeatureBlock/FeatureBlock';
 import FeatureDescription from '@/components/FeatureDescription/FeatureDescription';
 import { productivityLandingItems } from '@/utils/productivityLandingItems';
+import Testimonials from '@/components/Testimonials/Testimonials';
 
 export default function Home() {
   return (
@@ -123,6 +125,25 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </section>
+      <Testimonials />
+      <section className={styles.getStarted}>
+        <Image
+          src={blocksImg}
+          alt="blocks with watches and cursor"
+          className={styles.getStarted__img}
+        />
+        <div className={styles.getStarted__info}>
+          <h3 className={styles.getStarted__heading}>Get started with Solo today</h3>
+          <p className={styles.getStarted__title}>
+            Just invite your team, Solo does all the heavy-lifting.
+          </p>
+          <div className={styles.getStarted__button}>
+            <BaseButton isColored={true} color="white" link="#">
+              Try it free
+            </BaseButton>
+          </div>
+        </div>
       </section>
     </main>
   );

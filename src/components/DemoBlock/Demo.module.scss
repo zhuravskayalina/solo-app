@@ -12,7 +12,7 @@
     position: relative;
     border-radius: 24px;
     background: colors.$color-dark-background;
-    background: linear-gradient(56deg, colors.$purple 1%, colors.$color-dark-background 54%);
+    background: colors.$gradient-purple-background;
     width: 80%;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
