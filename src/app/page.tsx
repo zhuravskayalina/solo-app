@@ -102,7 +102,7 @@ export default function Home() {
         buttonText="Find out more"
       />
       <section className={styles.productivity}>
-        <Image src={bigCircleImg} alt="big cirle" className={styles.productivity__image} />
+        <Image src={bigCircleImg} alt="big circle" className={styles.productivity__image} />
         <div className={styles.productivity__featureDescription}>
           <FeatureDescription
             title={{ __html: 'Increase <br> Productivity' }}

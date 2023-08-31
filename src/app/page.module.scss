@@ -328,14 +328,13 @@
   background: colors.$gradient-purple-background;
   width: 80%;
   padding: 96px 112px;
-  display: grid;
   position: relative;
 
   &__info {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    width: 70%;
+    max-width: 40%;
     grid-area: gs-info;
   }
 
@@ -362,8 +361,11 @@
     height: auto;
     position: absolute;
     right: -146px;
-    bottom: -107px;
+    bottom: -64px;
     grid-area: gs-img;
+  }
+
+  @media screen and (max-width: 1024px) {
   }
 
   @media screen and (max-width: 1024px) {

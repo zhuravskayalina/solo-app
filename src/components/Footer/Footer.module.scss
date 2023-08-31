@@ -1,0 +1,132 @@
+@use '@/styles/variables/colors';
+@use '@/styles/mixins/elements';
+
+.footer {
+  margin: 136px auto;
+  width: 80%;
+  display: grid;
+  row-gap: 25px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'logo .'
+    'title .'
+    'download nav'
+    'copyright copyright';
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.title {
+  grid-area: title;
+  color: colors.$dark-gray;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.downloadLinks {
+  grid-area: download;
+  display: flex;
+  gap: 14px;
+
+  &__link {
+    img {
+      width: 167px;
+      height: auto;
+    }
+  }
+}
+
+.nav {
+  grid-area: nav;
+  @include elements.center-content;
+
+  &__list {
+    display: flex;
+    gap: 50px;
+  }
+
+  &__link {
+    color: colors.$dark-gray;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}
+
+.copyright {
+  margin-top: 30px;
+  padding-top: 24px;
+  grid-area: copyright;
+  border-top: 2px solid colors.$transparent-secondary;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    color: colors.$dark-gray;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 185%;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+}
+
+@include elements.media-tablet {
+  .footer {
+    grid-template-areas:
+      'logo download'
+      'title .'
+      'copyright copyright';
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .downloadLinks {
+    margin-left: auto;
+  }
+}
+
+@include elements.media-mobile {
+  .footer {
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'logo'
+      'title'
+      'download'
+      'copyright';
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .downloadLinks {
+    margin: 0 auto;
+  }
+
+  .copyright {
+    margin-top: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}

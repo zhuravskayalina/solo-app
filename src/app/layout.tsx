@@ -1,5 +1,6 @@
 import './globals.scss';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata = {
   title: 'Solo',
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
