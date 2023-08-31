@@ -39,7 +39,7 @@ export default function Home() {
               </BaseButton>
               <BaseButton isColored={false} link="#" color="gray">
                 <Image src={playIcon} alt="play" />
-                <span> Watch how it works</span>
+                <span>Watch how it works</span>
               </BaseButton>
             </div>
           </div>
