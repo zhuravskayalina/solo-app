@@ -365,10 +365,7 @@
     grid-area: gs-img;
   }
 
-  @media screen and (max-width: 1024px) {
-  }
-
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1300px) {
     grid-template-columns: 1fr;
     grid-template-areas:
       'gs-info'
@@ -376,6 +373,12 @@
     justify-items: center;
     gap: 42px;
     padding: 70px 32px;
+
+    &__info {
+      max-width: 100%;
+      margin-top: 30px;
+      gap: 20px;
+    }
 
     &__img {
       position: static;
