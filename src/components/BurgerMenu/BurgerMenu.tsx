@@ -4,11 +4,15 @@ import trialImage from '@/assets/images/main.png';
 import styles from './BurgerMenu.module.scss';
 import AuthButtons from '@/components/AuthButtons/AuthButtons';
 
-export default function BurgerMenu() {
+interface BurgerMenuProps {
+  closeMenu: () => void;
+}
+
+export default function BurgerMenu({ closeMenu }: BurgerMenuProps) {
   return (
     <section className={styles.burger}>
       <div className={styles.menu}>
-        <Navigation isTablet />
+        <Navigation isTablet closeBurgerMenu={closeMenu} />
         <Image src={trialImage} alt="trial" className={styles.image} />
       </div>
       <div className={styles.auth}>

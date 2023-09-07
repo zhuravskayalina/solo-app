@@ -4,7 +4,7 @@ import styles from './Navigation.module.scss';
 import clsx from 'clsx';
 import { NavItem, NavigationProps } from '@/components/Navigation/types';
 
-export default function Navigation({ isTablet }: NavigationProps) {
+export default function Navigation({ isTablet, closeBurgerMenu }: NavigationProps) {
   const navItems: NavItem[] = useMemo(() => {
     return [
       {
@@ -35,7 +35,7 @@ export default function Navigation({ isTablet }: NavigationProps) {
       <ul className={styles.list}>
         {navItems.map((item: NavItem) => (
           <li key={item.url} className={styles.list__item}>
-            <Link href={item.url} className={styles.list__link}>
+            <Link href={item.url} className={styles.list__link} onClick={closeBurgerMenu}>
               {item.title}
             </Link>
           </li>

@@ -5,4 +5,5 @@ export interface NavItem {
 
 export interface NavigationProps {
   isTablet: boolean;
+  closeBurgerMenu: () => void;
 }

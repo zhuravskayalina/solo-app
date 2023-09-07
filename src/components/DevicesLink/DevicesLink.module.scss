@@ -1,0 +1,42 @@
+@use '@/styles/variables/colors';
+@use '@/styles/mixins/elements';
+
+.device {
+  width: 222px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 20%;
+
+  &:hover {
+    background-color: colors.$color-light-background;
+    border: 3px solid colors.$white;
+  }
+
+  &__title {
+    margin-top: 24px;
+    color: colors.$grey;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__decription {
+    margin-top: 5px;
+    color: colors.$dark-gray;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+}

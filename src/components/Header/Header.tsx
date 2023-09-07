@@ -12,6 +12,7 @@ import closeIcon from '@/assets/images/icons/close.svg';
 import Navigation from '@/components/Navigation/Navigation';
 import AuthButtons from '@/components/AuthButtons/AuthButtons';
 import BurgerMenu from '@/components/BurgerMenu/BurgerMenu';
+import Link from 'next/link';
 
 export default function Header() {
   const [tabletScreen] = useTablet();
@@ -21,10 +22,16 @@ export default function Header() {
     setOpenMenu((prevState) => !prevState);
   };
 
+  const handleCloseMenu = () => {
+    if (tabletScreen) {
+      setOpenMenu(false);
+    }
+  };
+
   const navigationScreen = (
     <>
       <div className={styles.header__nav}>
-        <Navigation isTablet={false} />
+        <Navigation isTablet={false} closeBurgerMenu={handleCloseMenu} />
       </div>
       <div className={styles.header__auth}>
         <AuthButtons />
@@ -46,10 +53,12 @@ export default function Header() {
       )}
     >
       <div className={styles.container}>
-        <Image src={logoImg} alt="logo" className={styles.logo} priority />
+        <Link href="/">
+          <Image src={logoImg} alt="logo" className={styles.logo} priority />
+        </Link>
         {tabletScreen ? navigationTablet : navigationScreen}
       </div>
-      {openMenu && <BurgerMenu />}
+      {openMenu && <BurgerMenu closeMenu={handleCloseMenu} />}
     </section>
   );
 }
