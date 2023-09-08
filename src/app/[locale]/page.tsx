@@ -4,6 +4,8 @@ import styles from './page.module.scss';
 import { partnersList } from '@/utils/partnersList';
 import { setupSteps } from '@/utils/setupSteps';
 
+import { useTranslations } from 'next-intl';
+
 import playIcon from '@/assets/images/icons/play.svg';
 import trialImage from '@/assets/images/main.png';
 import phoneImg from '@/assets/images/phone.png';
@@ -23,13 +25,15 @@ import { productivityLandingItems } from '@/utils/productivityLandingItems';
 import Testimonials from '@/components/Testimonials/Testimonials';
 
 export default function Home() {
+  const t = useTranslations('Index');
+
   return (
     <main className={styles.main}>
       <section>
         <section className={styles.trial}>
           <div className={styles.trial__info}>
             <p className={styles.trial__paragraph}>RISK-FREE 30 DAY TRIAL</p>
-            <h2 className={styles.trial__heading}>The best way to organize your work.</h2>
+            <h2 className={styles.trial__heading}>{t('heading')}</h2>
             <p className={styles.trial__description}>
               Organize your tasks, lists and reminders in one app.
             </p>
